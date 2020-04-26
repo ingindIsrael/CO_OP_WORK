@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "577253364554",
+    "firebase_url": "https://coopwork-3ef92.firebaseio.com",
+    "project_id": "coopwork-3ef92",
+    "storage_bucket": "coopwork-3ef92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577253364554:android:800d0d9f434e2a669267b3",
+        "android_client_info": {
+          "package_name": "com.example.coopwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577253364554-1qmd2tp71619th53nn6upq1af6n8fmhm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.coopwork",
+            "certificate_hash": "78cf503909113f8c1ccb220635b4396a5ae66438"
+          }
+        },
+        {
+          "client_id": "577253364554-pm6i507hd4s1itj8p4rg4099vsoe0qi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJGQInRcM2U52EnXAN9-pePUKRgqQD9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577253364554-pm6i507hd4s1itj8p4rg4099vsoe0qi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
