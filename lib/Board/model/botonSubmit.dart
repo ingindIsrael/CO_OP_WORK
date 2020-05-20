@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:coopwork/User/bloc/bloc_user.dart';
+import 'package:coopwork/Board/model/place.dart';
+import 'package:coopwork/Board/model/cajatextonombre.dart';
+import 'package:coopwork/Board/model/cajatextoclave.dart';
 
-class BotonSubmit extends StatelessWidget{
+class BotonSubmit extends StatelessWidget {
 
-  UserBloc _userbloc;
+
+
+  final VoidCallback onPress;
+  BotonSubmit({this.onPress});
 
   @override
   Widget build(BuildContext context) {
 
-    _userbloc = BlocProvider.of<UserBloc>(context);
+
 
     return RaisedButton(
-      onPressed: (){
-      userbloc.updatePlaceData(Place(
-          name: _controllerTitlePlace.text,
-          description: _controllerDescriptionPlace.text,
-          uriImage: downloadUrl,
-          ), )
-          .whenComplete(() {
-        print('Cargado!');
-      });
-      },
+      onPressed: this.onPress,
       textColor: Colors.white,
-      child: Text('Submit Information'),
+      color: Colors.black,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50)
+      ),
+      child: Text('Submit Information', style: TextStyle(fontSize: 21 ,fontWeight: FontWeight.bold)),
     );
+
 
   }
 

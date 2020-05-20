@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 class cajanombre extends StatelessWidget {
 
-  TextEditingController nameController = TextEditingController();
+  TextEditingController nameController ;
+
+  cajanombre({this.nameController});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class cajanombre extends StatelessWidget {
    return Container(
      padding: EdgeInsets.all(10),
      child: TextField(
-       controller: nameController,
+       controller: this.nameController,
        decoration: InputDecoration(
          border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
          labelText: 'Cooperativist Name',

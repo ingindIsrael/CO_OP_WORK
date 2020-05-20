@@ -2,6 +2,9 @@ import 'package:coopwork/User/repository/auth_repository.dart';
 import 'package:coopwork/User/repository/clud_firestore_repository.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:coopwork/User/repository/Firebase_Auth_API.dart';
+import 'package:coopwork/User/model/user.dart';
+import 'package:coopwork/Board/model/place.dart';
 
 
 class UserBloc implements Bloc {
@@ -27,6 +30,7 @@ class UserBloc implements Bloc {
   void updateUserData(User user) => _cloudFirestoreRepository.updateUserDataFirestore(user);
   Future<void> updatePlaceData(Place place) => _cloudFirestoreRepository.updatePlaceData(place);
 
+  //3. hacer Logout de la aplicacion google
   signOut() {
     _auth_repository.signOut();
   }

@@ -1,7 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:coopwork/User/bloc/bloc_user.dart';
+import 'package:coopwork/User/model/user.dart';
+import 'package:coopwork/Board/model/place.dart';
 
-Class CloudFirestoreAPI {
+class CloudFirestoreAPI {
   final String USERS = "users";
   final String PLACES = "place";
 
@@ -10,28 +14,30 @@ Class CloudFirestoreAPI {
 
 //AQUI SE BAJAN DE FIRESTORE LOS DATOS DEL USUARIO
 
-  void updataUserData(User user) async{
+ void updateUserData(User user) async{
     DocumentReference ref = _db.collection(USERS).document(user.uid);
     return await ref.setData({
     'uid': user.uid,
     'name': user.name,
     'email': user.email,
-    'photoURL':user.photoURL,
+    //'photoURL':user.photoURL,
       'lastSignIn': DateTime.now()
 
-    }, merge: true;)
+    },
+
+        merge: true);
   }
 
   //AQUI SE SUBEN A FIRESTORE LOS DATOS DEL USUARIO
 
-  Future<void> updatePlaceData(Place place) async{
+    Future<void> updatePlaceData(Place place) async{
     CollectionReference refPlaces = _db.collection(PLACES);
 
     _auth.currentUser().then((FirebaseUser user){
-      await refPlaces.add(
+       refPlaces.add(
           {'name': place.name,
           'description': place.description,
-          'userOwner': "${USERS}/${user.uid}",//reference}
+          'userOwner': "${USERS}/${user.uid}",}//reference
       );
     });
 
